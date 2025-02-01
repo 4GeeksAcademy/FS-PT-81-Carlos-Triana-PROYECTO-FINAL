@@ -4,12 +4,13 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Login } from "./pages/login.jsx";
+import { Register } from "./pages/register.jsx";
+import { Perfil } from "./pages/perfil.jsx";
 
 //create your first component
 const Layout = () => {
@@ -20,17 +21,18 @@ const Layout = () => {
     if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
 
     return (
-        <div>
+        <div className="h-100">
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<Perfil />} path="/perfil" />
+                        <Route element={<h1>Not found!</h1>} path="*" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<Register />} path="/register" />          
                     </Routes>
-                    <Footer />
+                    <Footer className="" />
                 </ScrollToTop>
             </BrowserRouter>
         </div>

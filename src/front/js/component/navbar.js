@@ -1,19 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
+
+	const location = useLocation();
+
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+		<div className="d-flex fixed-top">
+			{location.pathname === "/" && (
+				<nav className="navbar containe bg-body p-3 mb-5 w-100 text border-bottom">
+					<i className="fa-solid fa-taxi fa-2xl"></i>
+					<p className="mb-0 ms-5"> TAXIFLASH </p>
+					<Link to="/login" className="text" style={{ textDecoration: 'none' }}>
+						<i className="fa-solid fa-user mx-3"></i>
 					</Link>
-				</div>
-			</div>
-		</nav>
+				</nav>
+			)}
+		</div>
+
 	);
 };
