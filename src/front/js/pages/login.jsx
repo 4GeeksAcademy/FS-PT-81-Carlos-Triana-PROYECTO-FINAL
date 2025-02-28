@@ -16,7 +16,7 @@ export const Login = () => {
 					<Formulario type={'login'} />
 				</div>
 				<div className="mt-5 text-black">
-				<Link to="/register">Regístrarse</Link>
+					<Link to="/register" className=" p-2">Regístrarse</Link>
 				</div>
 			</div>
 		</div>
