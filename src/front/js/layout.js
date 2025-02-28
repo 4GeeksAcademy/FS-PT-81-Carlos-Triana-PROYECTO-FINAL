@@ -11,6 +11,8 @@ import { Footer } from "./component/footer";
 import { Login } from "./pages/login.jsx";
 import { Register } from "./pages/register.jsx";
 import { Perfil } from "./pages/perfil.jsx";
+import { Update } from "./pages/update.jsx";
+import { UserHome } from "./pages/userHome.jsx";
 
 //create your first component
 const Layout = () => {
@@ -30,7 +32,9 @@ const Layout = () => {
                         <Route element={<Perfil />} path="/perfil" />
                         <Route element={<h1>Not found!</h1>} path="*" />
                         <Route element={<Login />} path="/login" />
-                        <Route element={<Register />} path="/register" />          
+                        <Route element={<Register />} path="/register" /> 
+                        <Route element={<Update />} path="/update" /> 
+                        <Route element={<UserHome />} path="/userHome" />         
                     </Routes>
                     <Footer className="" />
                 </ScrollToTop>
